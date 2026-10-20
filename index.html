@@ -693,17 +693,33 @@ const data = [
   {
     chapter: "02　Saturn · 土星",
     symbol: "♄",
-    lessons: []
+    lessons: [
+      { id: "2-1", title: "土星意識─困難、限制與成長", url: "https://player.mediadelivery.net/embed/758440/2a14376c-38a0-4066-b2a1-427d059d00f5?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "2-2", title: "苦難的形式與受傷反應", url: "https://player.mediadelivery.net/embed/758440/9c173f25-27aa-4d5e-ac32-3eb4816feb30?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "2-3", title: "土星在十二星座：你的考驗與修練之路", url: "https://player.mediadelivery.net/embed/758440/4962ce64-52c5-4707-804e-4919b3af1c8a?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "2-4", title: "土星意識─業力與重新學習", url: "https://player.mediadelivery.net/embed/758440/8d946052-f209-49b6-a9e3-409044dccd08?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "2-5", title: "土星逆行：靈魂如何承擔與面對", url: "https://player.mediadelivery.net/embed/758440/69335b6e-173d-455c-be0c-d7b6f0c7f5ca?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+    ]
   },
   {
     chapter: "03　Chiron · 凱龍星",
     symbol: "⚷",
-    lessons: []
+    lessons: [
+      { id: "3-1", title: "凱龍星意識─傷痛與療癒的渴望", url: "" },
+      { id: "3-2", title: "傷者、傷人者、療癒者", url: "" },
+      { id: "3-3", title: "凱龍星在十二星座：你的核心創傷藏在哪裡？", url: "" },
+      { id: "3-4", title: "凱龍星逆行：心靈未曾遺忘的老傷", url: "" },
+    ]
   },
   {
     chapter: "04　Uranus · 天王星",
     symbol: "♅",
-    lessons: []
+    lessons: [
+      { id: "4-1", title: "天王星意識─迎接生命的變與新", url: "" },
+      { id: "4-2", title: "天王星意識─釋放、進化與覺醒", url: "" },
+      { id: "4-3", title: "天王星在十二星座：你的世代如何跳脫、如何改寫", url: "" },
+      { id: "4-4", title: "天王星逆行：當反叛的力量回轉", url: "" },
+    ]
   },
   {
     chapter: "05　星盤實作",
@@ -815,58 +831,4 @@ function selectLesson(idx) {
       if (vimeoMatch) embedUrl = `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1`;
       frame.src = embedUrl;
       frame.style.display = 'block';
-      placeholder.style.display = 'none';
-    }
-  } else {
-    frame.src = '';
-    frame.style.display = 'none';
-    driveBtn.style.display = 'none';
-    placeholder.style.display = 'flex';
-    placeholder.querySelector('p').textContent = lesson.id + ' 影片連結待填入';
-  }
-
-  // Update nav buttons
-  document.getElementById('prevBtn').disabled = idx === 0;
-  document.getElementById('nextBtn').disabled = idx === allLessons.length - 1;
-}
-
-function navigateLesson(dir) {
-  const next = currentIndex + dir;
-  if (next >= 0 && next < allLessons.length) {
-    selectLesson(next);
-  }
-}
-
-// Password protection
-document.addEventListener('DOMContentLoaded', function() {
-  const COURSE_PASSWORD = 'ot2026';
-  const screen = document.getElementById('passwordScreen');
-  const input = document.getElementById('passwordInput');
-  const error = document.getElementById('passwordError');
-  const btn = document.getElementById('enterBtn');
-
-  function checkPassword() {
-    if (input.value === COURSE_PASSWORD) {
-      screen.style.display = 'none';
-      sessionStorage.setItem('courseAccessDeep', 'true');
-    } else {
-      error.style.display = 'block';
-      input.value = '';
-      input.focus();
-    }
-  }
-
-  btn.addEventListener('click', checkPassword);
-  input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') checkPassword();
-  });
-
-  if (sessionStorage.getItem('courseAccessDeep') === 'true') {
-    screen.style.display = 'none';
-  }
-});
-
-buildSidebar();
-</script>
-</body>
-</html>
+      placeholder.styl
