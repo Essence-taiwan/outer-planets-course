@@ -831,4 +831,58 @@ function selectLesson(idx) {
       if (vimeoMatch) embedUrl = `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1`;
       frame.src = embedUrl;
       frame.style.display = 'block';
-      placeholder.styl
+      placeholder.style.display = 'none';
+    }
+  } else {
+    frame.src = '';
+    frame.style.display = 'none';
+    driveBtn.style.display = 'none';
+    placeholder.style.display = 'flex';
+    placeholder.querySelector('p').textContent = lesson.id + ' 影片連結待填入';
+  }
+
+  // Update nav buttons
+  document.getElementById('prevBtn').disabled = idx === 0;
+  document.getElementById('nextBtn').disabled = idx === allLessons.length - 1;
+}
+
+function navigateLesson(dir) {
+  const next = currentIndex + dir;
+  if (next >= 0 && next < allLessons.length) {
+    selectLesson(next);
+  }
+}
+
+// Password protection
+document.addEventListener('DOMContentLoaded', function() {
+  const COURSE_PASSWORD = 'ot2026';
+  const screen = document.getElementById('passwordScreen');
+  const input = document.getElementById('passwordInput');
+  const error = document.getElementById('passwordError');
+  const btn = document.getElementById('enterBtn');
+
+  function checkPassword() {
+    if (input.value === COURSE_PASSWORD) {
+      screen.style.display = 'none';
+      sessionStorage.setItem('courseAccessDeep', 'true');
+    } else {
+      error.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  btn.addEventListener('click', checkPassword);
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPassword();
+  });
+
+  if (sessionStorage.getItem('courseAccessDeep') === 'true') {
+    screen.style.display = 'none';
+  }
+});
+
+buildSidebar();
+</script>
+</body>
+</html>
