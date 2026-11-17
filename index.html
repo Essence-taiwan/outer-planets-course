@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>行星意識‧深度線上課</title>
+<title>行星意識・入門線上課</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -183,7 +183,7 @@
   .course-banner-fallback {
     width: 100%;
     height: 100%;
-    background: #2D3A4A;
+    background: #2D4A35;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -407,6 +407,7 @@
     opacity: 0.6;
   }
 
+  /* Chapters 7 & 8 */
   .coming-soon-tag {
     font-size: 10px;
     color: var(--text-muted);
@@ -576,15 +577,16 @@
 
 <!-- Password Screen -->
 <div class="password-screen" id="passwordScreen">
-  <div class="password-symbol">♃ ♄ ⚷ ♅ ♆ ♇</div>
-  <h1 class="password-title">行星意識‧深度線上課</h1>
-  <p class="password-subtitle">閱讀外行星之潮</p>
+  <div class="password-symbol">☉ ☽ ♂ ☿ ♀</div>
+  <h1 class="password-title">行星意識・入門線上課</h1>
+  <p class="password-subtitle">認識自己的天空地圖</p>
   <div class="password-input-wrap">
     <input
       class="password-input"
       type="password"
       id="passwordInput"
       placeholder="請輸入課程密碼"
+      
     >
     <p class="password-error" id="passwordError">密碼錯誤，請再試一次</p>
     <button class="password-btn" id="enterBtn">進入課程</button>
@@ -596,7 +598,7 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar-header">
-      <p class="sidebar-course-label">深度線上課</p>
+      <p class="sidebar-course-label">入門線上課</p>
       <p class="sidebar-course-subtitle">課程列表</p>
     </div>
     <nav class="sidebar-nav" id="sidebarNav"></nav>
@@ -605,27 +607,27 @@
   <!-- Main -->
   <main class="main">
 
-    <!-- Banner：將圖片上傳到 GitHub 後，把 src 改成圖片檔名，例如 src="banner-deep.png" -->
+    <!-- Banner：將圖片上傳到 GitHub 後，把 src 改成圖片檔名，例如 src="banner.png" -->
     <div class="course-banner">
-      <img src="banner-deep.png" alt="行星意識深度線上課"
+      <img src="banner.png" alt="行星意識入門線上課"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <div class="course-banner-fallback" style="display:none;">
-        <span class="banner-en">Planetary Consciousness Astrology · Advanced Course</span>
-        <span class="banner-zh">行星意識‧深度線上課</span>
-        <span class="banner-sub">閱讀外行星之潮</span>
+        <span class="banner-en">Planetary Consciousness Astrology · Beginner Course</span>
+        <span class="banner-zh">行星意識・入門線上課</span>
+        <span class="banner-sub">認識自己的天空地圖</span>
       </div>
     </div>
 
     <div class="main-header" id="mainHeader">
       <p class="main-breadcrumb" id="breadcrumb">選擇左側課程開始學習</p>
-      <h1 class="main-lesson-title" id="mainTitle">行星意識‧深度線上課</h1>
+      <h1 class="main-lesson-title" id="mainTitle">行星意識・入門線上課</h1>
     </div>
 
     <div class="main-body" id="mainBody">
       <div class="welcome-state" id="welcomeState">
-        <div class="welcome-symbol">♃ ♄ ⚷ ♅ ♆ ♇</div>
-        <h2>歡迎深入探索你的星空奧秘</h2>
-        <p>這套課程帶你從太陽系的宇宙視角出發，<br>逐步認識木星、土星、凱龍星、天王星、海王星、冥王星五顆外行星。<br><br>從左側選擇第一堂課開始你的旅程。</p>
+        <div class="welcome-symbol">☉ ☽ ♂ ☿ ♀</div>
+        <h2>歡迎來到你的天空地圖</h2>
+        <p>這套課程帶你從太陽系的宇宙視角出發，<br>逐步認識太陽、月亮、水星、金星、火星五顆內行星，<br>以及相位與宮位的完整結構。<br><br>從左側選擇第一堂課開始你的旅程。</p>
         <button class="start-btn" onclick="selectLesson(0)">從第一堂開始 →</button>
       </div>
 
@@ -677,75 +679,84 @@
 </div>
 
 <script>
-// 新增課程：在對應章節的 lessons 陣列裡加入
-// { id: "2-1", title: "課程標題", url: "影片連結" },
 const data = [
   {
-    chapter: "01　Jupiter · 木星",
-    symbol: "♃",
-    lessons: [
-      { id: "1-1", title: "木星意識：擴張、機會與資源", url: "https://player.mediadelivery.net/embed/758440/1f8d958b-55fe-4e86-b835-6629cae6e51f?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "1-2", title: "木星意識：樂觀、智慧與信念", url: "https://player.mediadelivery.net/embed/758440/b281bca6-c757-4ea4-b8d5-9ae134933200?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "1-3", title: "木星在十二星座：你靈魂裡的幸運通道", url: "https://player.mediadelivery.net/embed/758440/fb4ac13d-3238-4ded-b82a-184995eca01e?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "1-4", title: "木星逆行：擴張受阻的拉扯", url: "https://player.mediadelivery.net/embed/758440/715629df-71e3-4e44-9ec3-adef922d9839?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-    ]
-  },
-  {
-    chapter: "02　Saturn · 土星",
-    symbol: "♄",
-    lessons: [
-      { id: "2-1", title: "土星意識─困難、限制與成長", url: "https://player.mediadelivery.net/embed/758440/2a14376c-38a0-4066-b2a1-427d059d00f5?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "2-2", title: "苦難的形式與受傷反應", url: "https://player.mediadelivery.net/embed/758440/9c173f25-27aa-4d5e-ac32-3eb4816feb30?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "2-3", title: "土星在十二星座：你的考驗與修練之路", url: "https://player.mediadelivery.net/embed/758440/4962ce64-52c5-4707-804e-4919b3af1c8a?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "2-4", title: "土星意識─業力與重新學習", url: "https://player.mediadelivery.net/embed/758440/8d946052-f209-49b6-a9e3-409044dccd08?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "2-5", title: "土星逆行：靈魂如何承擔與面對", url: "https://player.mediadelivery.net/embed/758440/69335b6e-173d-455c-be0c-d7b6f0c7f5ca?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-    ]
-  },
-  {
-    chapter: "03　Chiron · 凱龍星",
-    symbol: "⚷",
-    lessons: [
-      { id: "3-1", title: "凱龍星意識─傷痛與療癒的渴望", url: "https://player.mediadelivery.net/embed/758440/46031166-2a59-4fb6-8930-f89a70b4a135?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "3-2", title: "傷者、傷人者、療癒者", url: "https://player.mediadelivery.net/embed/758440/e0e7f88d-29e5-4f33-9355-b22bf82ea542?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "3-3", title: "凱龍星在十二星座：你的核心創傷藏在哪裡？", url: "https://player.mediadelivery.net/embed/758440/7759be87-2930-4059-b597-590fd68b5a28?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "3-4", title: "凱龍星逆行：心靈未曾遺忘的老傷", url: "https://player.mediadelivery.net/embed/758440/f75971e4-bda0-491b-bae6-b5ffb7696710?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-    ]
-  },
-  {
-    chapter: "04　Uranus · 天王星",
-    symbol: "♅",
-    lessons: [
-      { id: "4-1", title: "天王星意識─迎接生命的變與新", url: "https://player.mediadelivery.net/embed/758440/0b25d6af-e9f4-43e3-9202-6c00fbd93c25?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "4-2", title: "天王星意識─釋放、進化與覺醒", url: "https://player.mediadelivery.net/embed/758440/a419d4fa-16e8-4847-8483-f1ed0eff8b07?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "4-3", title: "天王星在十二星座：你的世代如何跳脫、如何改寫", url: "https://player.mediadelivery.net/embed/758440/e4d451a3-5a60-4a88-8ff3-623cecf42e02?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "4-4", title: "天王星逆行：當反叛的力量回轉", url: "https://player.mediadelivery.net/embed/758440/b6d2b08a-95e9-4318-8df8-20af787eb794?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-    ]
-  },
-  {
-    chapter: "05　星盤實作",
+    chapter: "01　基礎框架",
     symbol: "✦",
     lessons: [
-      { id: "全", title: "星盤實作", url: "https://player.mediadelivery.net/embed/758440/dc42f682-3314-4b56-be42-eb540b431904?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "1-1", title: "用太陽系視野讀懂天空地圖", url: "https://player.mediadelivery.net/embed/672297/9d3ae549-4f68-4760-b61e-d2b33292c3f9?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "1-2", title: "迴歸黃道：為什麼星座只有十二個", url: "https://player.mediadelivery.net/embed/672297/e3c24a13-7361-4fad-ada4-2165f9791d3e?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "1-3", title: "什麼是歲差現象？", url: "https://player.mediadelivery.net/embed/672297/f532f574-c965-406d-893e-c63ae1afc062?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "1-4", title: "四正星座(季節)：你天生的能量底色", url: "https://player.mediadelivery.net/embed/672297/d2d649df-703b-4116-9350-8d8e9912d875?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "1-4", title: "四正星座(三模式)：你天生的能量底色", url: "https://player.mediadelivery.net/embed/672297/8a257f7b-fff6-4a47-88f2-28c8b0146516?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "1-5", title: "三方星座(四元素)：你天生的能量底色", url: "https://player.mediadelivery.net/embed/672297/b50564f8-b738-4928-a91c-9cd81fdf8823?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
     ]
   },
   {
-    chapter: "06　Neptune · 海王星",
-    symbol: "♆",
+    chapter: "02　Moon · 月亮",
+    symbol: "☽",
     lessons: [
-      { id: "6-1", title: "海王星意識─召喚超能感應", url: "https://player.mediadelivery.net/embed/758440/71ca26be-bce6-4850-8bcb-4928faf7eacd?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "6-2", title: "海王星意識─夢想、藝術與靈性融合", url: "https://player.mediadelivery.net/embed/758440/38d717b4-54de-4903-8e44-084b478a5d11?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "6-3", title: "海王星在十二星座：你的世代一起做著什麼夢？", url: "https://player.mediadelivery.net/embed/758440/d536f034-f279-4324-8920-1586ef241620?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
-      { id: "6-4", title: "海王星逆行：醒不了的迷霧", url: "https://player.mediadelivery.net/embed/758440/e2fc44bf-6b1b-47f2-9021-f664b27abb6b?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "2-1", title: "月亮盈缺：認識月相的運行節奏", url: "https://player.mediadelivery.net/embed/672297/3cba8c9d-5def-4398-af46-0d2855747722?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "2-2", title: "月亮意識：安全感、依附與情緒的根", url: "https://player.mediadelivery.net/embed/672297/938a2cc5-93d1-4ff3-95c3-55fdfba4c285?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "2-3", title: "月亮在十二星座：你用什麼方式尋找安慰", url: "https://player.mediadelivery.net/embed/672297/79dd91b1-021a-4c3c-80c5-7448a42ade3a?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
     ]
   },
   {
-    chapter: "07　Pluto · 冥王星",
-    symbol: "♇",
+    chapter: "03　Mars · 火星",
+    symbol: "♂",
     lessons: [
-      { id: "7-1", title: "冥王星意識─潛意識的巨大力量", url: "" },
-      { id: "7-2", title: "冥王星意識─控制、深層欲望與轉化", url: "" },
-      { id: "7-3", title: "冥王星在十二星座：集體的執念如何顯化與重生", url: "" },
-      { id: "7-4", title: "冥王星逆行：從放不下的恐懼中轉身", url: "" },
+      { id: "3-1", title: "火星意識：欲望、行動力與生存本能", url: "https://player.mediadelivery.net/embed/672297/791e1a41-2f0e-48b9-b4ab-1c65a8e3fc70?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "3-2", title: "火星的驅力：什麼發動火星", url: "https://player.mediadelivery.net/embed/672297/d30ed538-6b5d-4a37-ae65-82f370776d2a?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "3-3", title: "火星在十二星座：你如何戰鬥、如何追求", url: "https://player.mediadelivery.net/embed/672297/788c5eb8-fd7a-4101-a246-11881704a377?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "3-4", title: "火星逆行：當行動力往內轉", url: "https://player.mediadelivery.net/embed/672297/83ce48c2-ac61-4659-ab9f-07eb74b8f8cc?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+    ]
+  },
+  {
+    chapter: "04　Mercury · 水星",
+    symbol: "☿",
+    lessons: [
+      { id: "4-1", title: "水星意識：語言、邏輯與溝通本能", url: "https://player.mediadelivery.net/embed/672297/4d3265eb-1819-43cc-b5f8-3f80e78c6ec8?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "4-2", title: "改變水星運算漏洞", url: "https://player.mediadelivery.net/embed/672297/69ea8855-1939-4702-b2f0-d1ac43bc9d77?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "4-3", title: "水星在十二星座：你的大腦是什麼頻道？", url: "https://player.mediadelivery.net/embed/672297/d866aa18-293d-47fa-8355-7ee66e5fe32f?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "4-4", title: "水星逆行：溝通卡關背後的訊息", url: "https://player.mediadelivery.net/embed/672297/9b81ca23-3830-47c5-9e9f-646a40359262?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+    ]
+  },
+  {
+    chapter: "05　Venus · 金星",
+    symbol: "♀",
+    lessons: [
+      { id: "5-1", title: "金星意識：你如何享受美？", url: "https://player.mediadelivery.net/embed/672297/36fc3eaf-4b8b-443a-8ae3-8feb8a0efe17?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "5-2", title: "金星意識再一層：共振、關係與愛", url: "https://player.mediadelivery.net/embed/672297/a1854538-2f56-4dda-8b4c-e28e5adef80a?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "5-3", title: "金星在十二星座：你的愛語與審美密碼", url: "https://player.mediadelivery.net/embed/672297/224500da-b4c1-47a0-9ed7-2023f9393fd8?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "5-4", title: "金星逆行：重新審視享樂的信念", url: "https://player.mediadelivery.net/embed/672297/4a615a11-434b-4f43-8bab-2f4b17e0a1db?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+    ]
+  },
+  {
+    chapter: "06　Sun · 太陽",
+    symbol: "☉",
+    lessons: [
+      { id: "6-1", title: "太陽意識：你來這裡是為了發光，不只生存", url: "https://player.mediadelivery.net/embed/672297/0245ac12-80de-4520-a4b2-61d1530bc35e?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "6-2", title: "太陽的群體位置與傳承", url: "https://player.mediadelivery.net/embed/672297/ca2bedcd-fa07-4312-bda8-4769cd1f9b2a?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "6-3", title: "太陽在十二星座：你的天命方向與榮耀姿態", url: "https://player.mediadelivery.net/embed/672297/641f6855-8077-4932-a136-741934a091a3?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "6-4", title: "太陽的成就：走出自己、走向自己", url: "https://player.mediadelivery.net/embed/672297/3404d05d-5d55-4164-b592-fbc8397cff7a?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+    ]
+  },
+  {
+    chapter: "07　相位初探",
+    symbol: "△",
+    lessons: [
+      { id: "7-1", title: "感受命盤動態：生命舞台上的行星互動", url: "https://player.mediadelivery.net/embed/672297/72cf5216-46a5-4546-9da3-fe6b0fcdfd65?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "7-2", title: "在星盤中找出相位", url: "https://player.mediadelivery.net/embed/672297/29ed0478-65d2-4f55-8dc4-1011ef99f035?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "7-3", title: "流暢與緊繃的力量：和諧、衝突相位", url: "https://player.mediadelivery.net/embed/672297/953f0fbd-ffc9-4e91-b889-391c3c17aedb?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+    ]
+  },
+  {
+    chapter: "08　宮位初探",
+    symbol: "⌂",
+    lessons: [
+      { id: "8-1", title: "行星入宮：把行星放進生命領域", url: "https://player.mediadelivery.net/embed/672297/b3317baf-6681-4975-8ce2-e4780ed4abd4?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "8-2", title: "十二宮位：你的生命舞台在哪裡", url: "https://player.mediadelivery.net/embed/672297/b08a7921-0967-49bd-8d3e-a9d308437e96?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
+      { id: "8-3", title: "整合星盤：組成完整可讀的你", url: "https://player.mediadelivery.net/embed/672297/e829007f-d03e-444f-9192-5e90c0e8b6c8?autoplay=true&loop=false&muted=true&preload=true&responsive=true" },
     ]
   },
 ];
@@ -784,16 +795,16 @@ function buildSidebar() {
 
 function selectLesson(idx) {
   if (currentIndex === idx) return;
-
+  
   // Deactivate previous
   if (currentIndex >= 0) {
     const prev = document.getElementById('item-' + currentIndex);
     if (prev) prev.classList.remove('active');
   }
-
+  
   currentIndex = idx;
   const lesson = allLessons[idx];
-
+  
   // Activate sidebar item
   const item = document.getElementById('item-' + idx);
   if (item) {
@@ -819,9 +830,13 @@ function selectLesson(idx) {
   const driveBtn = document.getElementById('driveBtnWrap');
 
   if (lesson.url && lesson.url.trim() !== '') {
+    // Check if Google Drive
     const driveMatch = lesson.url.match(/drive\.google\.com/);
+    // Check Bunny Stream
     const bunnyMatch = lesson.url.match(/mediadelivery\.net/);
+    // Check YouTube
     const ytMatch = lesson.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?]+)/);
+    // Check Vimeo
     const vimeoMatch = lesson.url.match(/vimeo\.com\/(\d+)/);
 
     if (bunnyMatch) {
@@ -867,7 +882,7 @@ function navigateLesson(dir) {
 
 // Password protection
 document.addEventListener('DOMContentLoaded', function() {
-  const COURSE_PASSWORD = 'ot2026';
+  const COURSE_PASSWORD = 'as2026';
   const screen = document.getElementById('passwordScreen');
   const input = document.getElementById('passwordInput');
   const error = document.getElementById('passwordError');
@@ -876,7 +891,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function checkPassword() {
     if (input.value === COURSE_PASSWORD) {
       screen.style.display = 'none';
-      sessionStorage.setItem('courseAccessDeep', 'true');
+      sessionStorage.setItem('courseAccess', 'true');
     } else {
       error.style.display = 'block';
       input.value = '';
@@ -889,7 +904,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.key === 'Enter') checkPassword();
   });
 
-  if (sessionStorage.getItem('courseAccessDeep') === 'true') {
+  if (sessionStorage.getItem('courseAccess') === 'true') {
     screen.style.display = 'none';
   }
 });
